@@ -1,4 +1,5 @@
 import { FormEvent, useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 
 import { ProfileContext } from "../contexts/ProfileContext";
 
@@ -9,6 +10,7 @@ import "../styles/home.scss";
 export const Home = () => {
   const [username, setUsername] = useState("");
   const [image, setImage] = useState("");
+  const history = useHistory();
 
   const { changeProfileData } = useContext(ProfileContext);
 
@@ -22,6 +24,8 @@ export const Home = () => {
       username,
       image,
     });
+
+    history.push("/profile");
   };
 
   return (
