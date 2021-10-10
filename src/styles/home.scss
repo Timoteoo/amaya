@@ -1,0 +1,97 @@
+// Variables
+$cleanDark: #1e2222;
+$lightGray: #474747;
+$pink: #e0387b;
+$yellow: #e0b638;
+
+// Rules
+#home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .title {
+    width: 250px;
+    position: relative;
+    top: -50px;
+
+    h1 {
+      color: $cleanDark;
+    }
+
+    .big-bar {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, $pink, $yellow);
+    }
+  }
+
+  p {
+    position: relative;
+    top: -40px;
+  }
+
+  form {
+    margin-top: 10px;
+
+    .input-wraper:first-of-type {
+      margin-top: 20px;
+    }
+
+    .input-wraper:last-of-type {
+      margin-top: 40px;
+    }
+
+    .input-area {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      label {
+        position: absolute;
+        top: -10px;
+        left: 5px;
+        transition: 0.2s ease;
+        color: $lightGray;
+        user-select: none;
+      }
+
+      input {
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        outline: 0;
+        width: 350px;
+      }
+
+      input:focus + label,
+      input:valid + label {
+        font-size: 12px;
+        top: -20px;
+        left: 0;
+      }
+    }
+
+    button {
+      width: 200px;
+      height: 40px;
+      margin-top: 40px;
+      border: 0;
+      outline: 0;
+      border-radius: 100px 30px;
+      background: linear-gradient(to right, $pink, $yellow);
+      cursor: pointer;
+      color: white;
+      font-weight: 500;
+      font-size: 18px;
+      transition: filter 0.3s ease;
+    }
+
+    button:hover {
+      filter: brightness(1.1);
+    }
+  }
+}
