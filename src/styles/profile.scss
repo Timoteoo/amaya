@@ -1,0 +1,15 @@
+#profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  img {
+    border-radius: 50%;
+  }
+
+  h2 {
+    margin-top: 10px;
+  }
+}
