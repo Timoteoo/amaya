@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "../styles/navbar.scss";
 
 export const Navbar = () => {
@@ -17,11 +19,11 @@ export const Navbar = () => {
 
         <ul>
           <li>
-            <a href="">Create Profile</a>
+            <Link to="/">Create Profile</Link>
             <div className="mini-bar" />
           </li>
           <li>
-            <a href="">Your Profile</a>
+            <Link to="/profile">My profile</Link>
             <div className="mini-bar" />
           </li>
         </ul>
