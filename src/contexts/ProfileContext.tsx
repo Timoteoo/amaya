@@ -7,7 +7,7 @@ type ProfileType = {
 
 type ProfileContextType = {
   profileData: ProfileType | undefined;
-  changeProfileData: ({}: ProfileType) => void;
+  changeProfileData: (data: ProfileType) => void;
 };
 
 type ProfileContextProviderProps = {
