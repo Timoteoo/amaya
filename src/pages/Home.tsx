@@ -1,10 +1,12 @@
 import { FormEvent, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 import { ProfileContext } from "../contexts/ProfileContext";
 
 import { Navbar } from "../components/Navbar";
 
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/home.scss";
 
 export const Home = () => {
@@ -14,11 +16,20 @@ export const Home = () => {
 
   const { changeProfileData } = useContext(ProfileContext);
 
+  const notifyError = (msg: string) => {
+    toast.error(msg, {
+      position: "top-right",
+      autoClose: 3000,
+      icon: "🛑",
+      theme: "light",
+    });
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    if (!username || !image || username.trim() === "" || image.trim() === "")
-      return;
+    if (username.trim() === "" || image.trim() === "")
+      return notifyError("Please provide all the values");
 
     changeProfileData({
       username,
@@ -32,6 +43,7 @@ export const Home = () => {
     <div>
       <Navbar />
       <main id="home">
+        <ToastContainer />
         <div className="title">
           <h1>Create Profile</h1>
           <div className="big-bar"></div>
